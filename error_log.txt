@@ -1,0 +1,4 @@
+Exception: name 'greetings' is not defined
+Exception type: <class 'NameError'>
+Exception time: 2023-05-14 15:53:52.599576
+Exception function: main
