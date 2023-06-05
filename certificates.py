@@ -255,3 +255,4 @@ class GlacierHopCertificate(AbstractHopCertificate):
 
     def get_cohumulone(self):
         pass
+

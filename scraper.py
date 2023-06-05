@@ -20,15 +20,17 @@ class Producer:
 
     def check_producer(self):
         if 'hopsteiner' in self.user_url:
-            return 1
+            producer = 'hopsteiner'
+            return producer
         elif 'hollingbery' in self.user_url:
-            return 2
+            producer = 'hollingbery'
+            return producer
         elif 'crosbyhops' in self.user_url:
-            return 3
+            producer = 'crosbyhops'
+            return producer
         elif 'glacierhops' in self.user_url:
-            return 4
-        else:
-            return 'Nie znaleziono producenta.'
+            producer = 'glacierhops'
+            return producer
 
 
 class SoupSource:
@@ -47,10 +49,10 @@ class SoupSource:
 
 class CrawlChecker:
 
-    producers_robotstxt = {1: 'https://www.hopsteiner.com/robots.txt',
-                           2: 'https://www.hollingberyandson.com/robots.txt',
-                           3: 'https://portal.crosbyhops.com/robots.txt',
-                           4: 'https://glacierhopsranch.com/robots.txt'}
+    producers_robotstxt = {'hopsteiner': 'https://www.hopsteiner.com/robots.txt',
+                           'hollingbery': 'https://www.hollingberyandson.com/robots.txt',
+                           'crosbyhops': 'https://portal.crosbyhops.com/robots.txt',
+                           'glacierhops': 'https://glacierhopsranch.com/robots.txt'}
 
     def __init__(self):
         pass

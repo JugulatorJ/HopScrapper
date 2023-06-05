@@ -1,4 +1,7 @@
-Exception: name 'greetings' is not defined
-Exception type: <class 'NameError'>
-Exception time: 2023-05-14 15:53:52.599576
+Exception: CertGenerator.generate_hop_cert_dict() takes 3 positional arguments but 4 were given
+Exception type: <class 'TypeError'>
+Exception time: 2023-06-06 00:31:44.179242
+Exception file: C:\Users\HP\PycharmProjects\HopScrapper\main.py
 Exception function: main
+Exception line: 9
+------------------------------------------
