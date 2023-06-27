@@ -8,6 +8,7 @@ class CertGenerator:
     def generate_hop_cert_dict(self, soup_source, entry_id):
 
         if self.producer == 'hopsteiner':
+
             lot_id = HopsteinerHopCertificate(soup_source).get_lot_id()
             contract_number = HopsteinerHopCertificate(soup_source).get_contract_number()
             hop_name = HopsteinerHopCertificate(soup_source).get_hop_name()
@@ -70,7 +71,8 @@ class CertGenerator:
             print('\n')
             return hop_cert_dict
 
-    def generate_scrap_denied(self, entry_id):
+    @staticmethod
+    def generate_scrap_denied(entry_id):
         hop_cert_dict = {'entry_id': entry_id, 'lot_id': None, 'contract_number': None,
                          'hop_name': None, 'crop_year': None, 'alpha_acid': None,
                          'beta_acid': None, 'total_oil': None, 'cohumulone': None}

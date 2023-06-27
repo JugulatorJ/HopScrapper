@@ -1,5 +1,6 @@
 import time
 import urllib.robotparser
+from validators import url
 from bs4 import BeautifulSoup
 from selenium import webdriver
 
@@ -19,18 +20,19 @@ class Producer:
         self.user_url = user_url
 
     def check_producer(self):
-        if 'hopsteiner' in self.user_url:
-            producer = 'hopsteiner'
-            return producer
-        elif 'hollingbery' in self.user_url:
-            producer = 'hollingbery'
-            return producer
-        elif 'crosbyhops' in self.user_url:
-            producer = 'crosbyhops'
-            return producer
-        elif 'glacierhops' in self.user_url:
-            producer = 'glacierhops'
-            return producer
+        if url(self.user_url):
+            if 'hopsteiner' in self.user_url:
+                producer = 'hopsteiner'
+                return producer
+            elif 'hollingbery' in self.user_url:
+                producer = 'hollingbery'
+                return producer
+            elif 'crosbyhops' in self.user_url:
+                producer = 'crosbyhops'
+                return producer
+            elif 'glacierhops' in self.user_url:
+                producer = 'glacierhops'
+                return producer
 
 
 class SoupSource:
