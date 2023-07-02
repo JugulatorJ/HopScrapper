@@ -1,51 +1,37 @@
+from scraper import WebURL
 from scraper import Producer
 
-# Tests for Producer class
-def test_producer_hopsteiner():
 
-    user_url = 'https://www.hopsteiner.com'
-    producer = Producer(user_url)
+def test_WebURL(monkeypatch):
+    monkeypatch.setattr('builtins.input', lambda _: 'http://example.com')
 
-    result = producer.check_producer()
+    web_url = WebURL()
 
-    assert result == 1
+    assert web_url.get_url() == 'http://example.com'
 
 
-def test_producer_hollingbery():
+def test_Producer():
+    producer = Producer('http://example.com')
 
-    user_url = 'https://www.hollingberyandson.com'
-    producer = Producer(user_url)
-
-    result = producer.check_producer()
-
-    assert result == 2
+    assert producer.check_producer() == None
 
 
-def test_producer_crosby():
-
-    user_url = 'https://portal.crosbyhops.com'
-    producer = Producer(user_url)
-
-    result = producer.check_producer()
-
-    assert result == 3
+def test_Producer_check_producer_hopsteiner():
+    producer = Producer('http://hopsteiner.com')
+    assert producer.check_producer() == 'hopsteiner'
 
 
-def test_producer_glacier():
-
-    user_url = 'https://glacierhopsranch.com'
-    producer = Producer(user_url)
-
-    result = producer.check_producer()
-
-    assert result == 4
+def test_Producer_check_producer_hollingbery():
+    producer = Producer('http://hollingbery.com')
+    assert producer.check_producer() == 'hollingbery'
 
 
-def test_producer_unknown():
+def test_Producer_check_producer_crosbyhops():
+    producer = Producer('http://crosbyhops.com')
+    assert producer.check_producer() == 'crosbyhops'
 
-    user_url = 'https://www.google.com'
-    producer = Producer(user_url)
 
-    result = producer.check_producer()
+def test_Producer_check_producer_glacierhops():
+    producer = Producer('http://glacierhops.com')
+    assert producer.check_producer() == 'glacierhops'
 
-    assert result == 'Nie znaleziono producenta.'

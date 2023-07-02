@@ -2,7 +2,6 @@ import datetime
 from greetings import Greetings
 from exception_catcher import exception_catcher
 from db_connector import ModifyDB
-# from certificates import HopsteinerHopCertificate, HolingberyHopCertificate, CrosbyHopCertificate, GlacierHopCertificate
 from scraper import SoupSource, Producer, WebURL, CrawlChecker
 from certificate_creator import CertGenerator
 
