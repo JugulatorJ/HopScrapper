@@ -1,9 +1,10 @@
 import datetime
-from greetings import Greetings
-from exception_catcher import exception_catcher
-from db_connector import ModifyDB
-from scraper import SoupSource, Producer, WebURL, CrawlChecker
 from certificate_creator import CertGenerator
+from db_connector import ModifyDB
+from exception_catcher import exception_catcher
+from greetings import Greetings
+from scraper import SoupSource, Producer, WebURL, CrawlChecker
+
 
 
 @exception_catcher

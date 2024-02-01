@@ -3,10 +3,10 @@ import datetime
 
 def exception_catcher(func):
 
-    def wrapper(*args, **kwrgs):
+    def wrapper(*args, **kwargs):
 
         try:
-            return func(*args, **kwrgs)
+            return func(*args, **kwargs)
         except Exception as e:
             with open('error_log.txt', "w") as f:
                 f.write(f'Exception: {e}\n')
